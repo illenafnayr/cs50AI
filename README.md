@@ -1,1 +1,1 @@
-# cs50AI
+# CS-50 Aritficial Intelligence

@@ -23,8 +23,8 @@ def test_state():
     Returns starting state of the board.
     """
     return [[EMPTY, EMPTY, O],
-            [EMPTY, EMPTY, EMPTY],
-            [EMPTY, EMPTY, EMPTY]]
+            [EMPTY, O, EMPTY],
+            [O, EMPTY, EMPTY]]
 
 
 def player(board):
@@ -51,17 +51,27 @@ def player(board):
         return X
     if len(x) == len(o):
         print("X's turn")
-        return X        
+        return X
 
-    print (x)
-    print(o)
+
 def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
 
+    actions = set()
+    i = 0
+    j = 0
+    for row in board:
+        i += 1
+        for square in row:
+            j += 1
+            if (square == EMPTY):
+                possibleMove = (i,j)
+                actions.add(possibleMove)
 
+    return actions            
+    # return {}
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.

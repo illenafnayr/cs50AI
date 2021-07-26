@@ -69,9 +69,9 @@ def actions(board):
             if (square == EMPTY):
                 possibleMove = (i,j)
                 actions.add(possibleMove)
+    print(actions)
+    return actions
 
-    return actions            
-    # return {}
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.

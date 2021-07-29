@@ -22,9 +22,9 @@ def test_state():
     """
     Returns starting state of the board.
     """
-    return [[EMPTY, EMPTY, O],
-            [EMPTY, O, EMPTY],
-            [O, EMPTY, EMPTY]]
+    return [[X, X, O],
+            [O, O, X],
+            [O, X, O]]
 
 
 def player(board):
@@ -90,8 +90,16 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    raise NotImplementedError
-
+    i = 0
+    j = 0
+    for row in board:
+        i += 1
+        for square in row:
+            j += 1
+            if (square == EMPTY):
+                return False
+            else:
+                return True;
 
 def utility(board):
     """
